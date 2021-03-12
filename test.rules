@@ -1,0 +1,1 @@
+alert icmp any any -> any any (msg: "Ping detected"; rev: 1; sid: 1000010;)
