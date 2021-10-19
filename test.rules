@@ -1,1 +1,2 @@
 alert icmp any any -> any any (msg: "Ping detected"; rev: 1; sid: 1000010;)
+alert tcp any any -> $HOME_NET 80 (msg:”SYN Flood - SSH"; flags:S;flow: stateless; detection_filter: track by_dst, count 40, seconds 10; GID:1; sid:10000002; rev:001; classtype:attempted-dos;)
